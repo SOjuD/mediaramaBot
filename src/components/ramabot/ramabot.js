@@ -20,7 +20,7 @@ const ramaParams = {
     clientName: '',
     clientPhone: '',
     currentUserMessage: '',
-    botWrite: false,
+    messagesQueue: [],
     handlerUrl: 'http://pathtofile.by'
 };
 
