@@ -1,0 +1,19 @@
+@import ../../sass/utils/_vars
+@import ../../sass/utils/_mixin
+
+
+
+.preloader
+	position: fixed
+	z-index: 200000
+	background: rgba($white, .9)
+	width: 100vw
+	height: 100vh
+	left: 0
+	top: 0
+	+flex(center, center)
+	circle:first-child
+		stroke: $primary
+	circle:last-child
+		stroke: $secondary
+		

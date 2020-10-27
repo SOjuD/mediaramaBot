@@ -1,0 +1,40 @@
+
+<!-- analitycs here -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const phones = document.querySelectorAll('[href^="tel:"]')
+        phones.forEach( phone => {
+            phone.addEventListener('click', function(){
+                console.log('click to phone!');
+            })
+        })
+
+        const forms = document.querySelectorAll('form:not(#search)');
+
+        forms.forEach(form => {
+            form.addEventListener('submit', evt => {
+                evt.preventDefault();
+                const formData = new FormData(evt.target);
+                document.querySelector('body').style.cursor = 'wait';
+                fetch('/mail.php', {
+                    method: 'POST',
+                    body: formData
+                }).then( (response) => {
+                    if( !response.ok ) throw new Error('mail.php error');
+                    document.querySelector('.modal-message_success').classList.add('active');
+                    evt.target.reset();
+
+                    console.log('feddback sended!');
+
+                        
+                }).catch( (error) =>{
+                    console.log(error)
+                    document.querySelector('.modal-message_error').classList.add('active')
+                }).finally (()=>{
+                    document.querySelector('body').style.cursor = 'auto';
+                })
+            })
+        });
+    })
+</script>
