@@ -1,3 +1,7 @@
 import setCurrentMessage from './set-current-msg';
+import loadingQueue from './loading-queue';
 
-export default setCurrentMessage;
+export{
+    setCurrentMessage,
+    loadingQueue
+} 

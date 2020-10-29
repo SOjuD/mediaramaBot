@@ -1,4 +1,4 @@
-import witeLog from './write-log';
+import witeLog from '../chat-control/write-log';
 import { toggleInput } from '../chat-control';
 
 export default function iterationMessage(params){

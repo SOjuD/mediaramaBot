@@ -1,6 +1,6 @@
 import { getBotCookie, setBotCookie, createLogItem } from '../functions';
 
-function writeLoginCookie(message, className){
+function writeLogCookie(message, className){
     const cookie = getBotCookie();
     const log = cookie.log || [];
     let coincidence;
@@ -29,11 +29,13 @@ function createMessage(message, className = '') {
     return msgWrap;
 }
 
-export default function addMessage( message, className) {
+export default function addMessage( message, className, writeLog = true) {
     try{
         const ramabotBody = document.querySelector('.ramabot__body');
         const elem = createMessage( message, className );
-        writeLoginCookie( message, className );
+
+        if ( writeLog ) writeLogCookie( message, className );
+
         ramabotBody.appendChild(elem);
 
     }catch (e){

@@ -1,6 +1,6 @@
 import { toggleChat, restoreDiscussion, startDiscussion, toggleInput } from './chat-control';
 import sendForm from './send-form';
-import setCurrentMessage from './user-write';
+import { setCurrentMessage } from './user-write';
 import { getBotCookie } from './functions';
 
 import './functions/tel-mask';
@@ -17,9 +17,8 @@ const ramaParams = {
     ],
     log: getBotCookie().log || [],
     isOpen: false,
-    clientName: '',
-    clientPhone: '',
     currentUserMessage: '',
+    currentInputName: '',
     messagesQueue: [],
     handlerUrl: 'http://pathtofile.by'
 };

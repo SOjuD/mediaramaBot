@@ -1,4 +1,4 @@
-import { showPreloader, hidePreloader } from './toggle-preloader';
+import { showPreloader, hidePreloader } from '../chat-control/toggle-preloader';
 import addMessage from './add-message';
 import iterationMessage from './iteration-message';
 import { addToQueue, removeFromQueue } from './edit-queue';
@@ -8,12 +8,10 @@ import { addToQueue, removeFromQueue } from './edit-queue';
 export default function botWrite(params, delay, duration) {
 
     if(params.botMessages.length){
-        const message = iterationMessage(params);
-        
-        addToQueue(params, message);
 
+        const message = iterationMessage(params);
+        addToQueue(params, message);
         duration = duration || message.length * 150;
-        console.log(duration)
         const botMsgClass = 'msg_wrap';
 
         const timer = setTimeout( async () => {

@@ -4,7 +4,7 @@ export default function restoreDiscussion({ log, botMessages }) {
 
 
     log.forEach( ({ msg, from }) => {
-        addMessage(msg, from);
+        addMessage(msg, from, false);
 
         if( from === 'msg_wrap' ){
             botMessages.forEach( (el, indx, arr) => {
