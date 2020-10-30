@@ -1,5 +1,5 @@
 import { toggleChat, restoreDiscussion, startDiscussion, toggleInput } from './chat-control';
-import sendForm from './send-form';
+import { sendForm } from './send-form';
 import { setCurrentMessage } from './user-write';
 import { getBotCookie } from './functions';
 
@@ -13,14 +13,15 @@ const ramaParams = {
         'Здравствуйте! Вам нужна помощь?',
         'Напишите, что вас интересует).',
         'Подскажите как к вам обращаться?',
-        'у меня для вас есть предложение напишите свой номер я вам перезвоню.))'
+        'У меня для вас есть предложение напишите свой номер я вам перезвоню.))',
+        'Спасибо, я скоро перезвоню.'
     ],
     log: getBotCookie().log || [],
     isOpen: false,
-    currentUserMessage: '',
-    currentInputName: '',
+    userTimer: '',
     messagesQueue: [],
-    handlerUrl: 'http://pathtofile.by'
+    botWrite: false,
+    handlerUrl: 'http://pathtofile.by/mail.php'
 };
 
 

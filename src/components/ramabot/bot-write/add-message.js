@@ -37,6 +37,7 @@ export default function addMessage( message, className, writeLog = true) {
         if ( writeLog ) writeLogCookie( message, className );
 
         ramabotBody.appendChild(elem);
+        elem.scrollIntoView(false);
 
     }catch (e){
         console.error('Ошибка при вставке сообщения: ', e);

@@ -1,3 +1,7 @@
 import sendForm from './send-form';
+import sendData from './send-data';
 
-export default sendForm;
+export{
+    sendForm,
+    sendData
+} 
