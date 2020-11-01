@@ -1,12 +1,9 @@
-import { toggleChat, restoreDiscussion, startDiscussion, toggleInput } from './chat-control';
-import { sendForm } from './send-form';
-import { setCurrentMessage } from './user-write';
+import { createChat } from './chat-control';
+
 import { getBotCookie } from './functions';
 
 import './functions/tel-mask';
 
-const form = document.querySelector('#ramabot');
-const ramabotHeader = document.querySelector('.ramabot__header');
 
 const ramaParams = {
     botMessages: [
@@ -21,16 +18,15 @@ const ramaParams = {
     userTimer: '',
     messagesQueue: [],
     botWrite: false,
-    handlerUrl: 'http://pathtofile.by/mail.php'
+    handlerUrl: 'http://pathtofile.by/mail.php',
+    view: {
+        name: 'Александр',
+        photo: '../assets/img/manager.png',
+        color: 'red'
+    }
 };
 
 
-ramabotHeader.addEventListener("click", () => { toggleChat(ramaParams); });
-form.addEventListener("submit", (evt) => { sendForm(evt, ramaParams) });
-form.addEventListener("input", (evt) => { setCurrentMessage(ramaParams, evt) });
+createChat(ramaParams);
 
 
-if (ramaParams.log.length) restoreDiscussion(ramaParams);
-else startDiscussion(ramaParams);
-
-toggleInput(ramaParams);
