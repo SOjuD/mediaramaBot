@@ -52,5 +52,4 @@ function botIsWriting( params, message, botMsgClass ){
     hidePreloader();
     params.botWrite = false;
     removeFromQueue(params, message);
-    params.botWrite = false;
  }
