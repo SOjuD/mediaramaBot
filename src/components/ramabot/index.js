@@ -17,6 +17,7 @@ const ramaParams = {
     isOpen: false,
     userTimer: '',
     messagesQueue: [],
+    unreadMessages: [],
     botWrite: false,
     handlerUrl: 'http://pathtofile.by/mail.php',
     view: {

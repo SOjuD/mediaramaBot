@@ -1,4 +1,4 @@
-import sendData from '../send-form';
+import { sendData } from '../send-form';
 
 
 export default function (params) {

@@ -1,5 +1,5 @@
 // JS
-import './components/ramabot/ramabot'
+import './components/ramabot/'
 
 // SASS
 import './components/ramabot/ramabot.sass'
