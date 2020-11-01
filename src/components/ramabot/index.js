@@ -23,7 +23,8 @@ const ramaParams = {
     view: {
         name: 'Александр',
         photo: '../assets/img/manager.png',
-        color: 'red'
+        color: 'red',
+        welcome: "Если возникнут вопросы, обращайтесь, я вам помогу)"
     }
 };
 

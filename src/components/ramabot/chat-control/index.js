@@ -5,6 +5,8 @@ import toggleInput from './toggle-chat-state';
 import createChat from './create-chat';
 import editUnreadQueue from './edit-unread-queue';
 import { addToQueue, removeFromQueue } from './edit-queue';
+import { showPreloader, hidePreloader } from './toggle-preloader';
+import showWelcome from './show-welcome';
 
 export {
     toggleChat,
@@ -14,6 +16,9 @@ export {
     createChat,
     editUnreadQueue,
     addToQueue,
-    removeFromQueue
+    removeFromQueue,
+    showPreloader,
+    hidePreloader,
+    showWelcome
 }
 

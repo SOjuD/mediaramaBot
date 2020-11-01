@@ -1,8 +1,6 @@
-import { showPreloader, hidePreloader } from '../chat-control/toggle-preloader';
 import addMessage from './add-message';
 import iterationMessage from './iteration-message';
-import { addToQueue, removeFromQueue } from '../chat-control/';
-import { editUnreadQueue } from '../chat-control';
+import { addToQueue, removeFromQueue, showPreloader, hidePreloader, editUnreadQueue, showWelcome } from '../chat-control/';
 
 
 
@@ -40,11 +38,14 @@ export default function botWrite(params, delay, duration) {
  }
 
 function botIsWriting( params, message, botMsgClass ){
-   addMessage( message, botMsgClass )
-   console.log(params)
-   if( params.isOpen ) editUnreadQueue(params);
-   else editUnreadQueue(params, message);
-      
+
+   addMessage( message, botMsgClass );
+   if( params.isOpen ){
+      editUnreadQueue(params);
+   }else {
+      editUnreadQueue(params, message);
+      showWelcome(message);
+   }    
 }
 
  function botFinishWrite(params, message) {

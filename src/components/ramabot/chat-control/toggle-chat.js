@@ -1,12 +1,14 @@
+import showWelcome from './show-welcome';
+import editUnreadQueue from './edit-unread-queue';
+
+
 export default function toggleChat(params) {
-    try{
-        const ramabotBodyOpen = document.querySelector('.ramabot__body_box');
-        ramabotBodyOpen.classList.toggle("ramabot__body_hidden");
 
-        params.isOpen = !params.isOpen;
-        if( !params.isOpen ) params.unreadMessages = [];
+    const ramabotBodyOpen = document.querySelector('.ramabot__body_box');
+    ramabotBodyOpen.classList.toggle("ramabot__body_hidden");
 
-    }catch (e) {
-        console.error('Проблемы открытия чата: ', e)
-    }
+    params.isOpen = !params.isOpen;
+
+    if( params.isOpen ) editUnreadQueue(params);
+    else showWelcome(params.view.welcome);
 }

@@ -38,6 +38,20 @@ $defaultFont: 'Archivo', sans-serif
 
     ::-webkit-scrollbar
         width: 8px
+    &-unread
+        flex-grow: 5
+        display: flex
+        justify-content: center
+        align-items: center
+        &-counter
+            width: 24px
+            height: 24px
+            background: white 
+            color: black
+            border-radius: 100%
+            display: flex
+            justify-content: center 
+            align-items: center
     &__header
         display: flex
         align-items: center
@@ -64,11 +78,44 @@ $defaultFont: 'Archivo', sans-serif
                 font-size: 15px
             p
                 font-size: 15px
+        &_message
+            background: #d6d6d6
+            position: absolute
+            border-radius: 10px
+            top: -50px
+            left: 28px
+            z-index: 10
+            transform-origin: left bottom
+            transform: scale(0.3)
+            opacity: 0
+            transition: 0.2s cubic-bezier(0.68, -0.6, 0.32, 1.6)
+            &::before
+                content: ''
+                width: 0
+                height: 0
+                border-style: solid
+                border-width: 15px 5px 0 15px
+                border-color: #d6d6d6 transparent transparent transparent
+                position: absolute
+                left: 25px
+                top: 100%
+                z-index: 1
+            p
+                color: #000
+                font-size: 14px
+                padding: 10px 15px
+                margin: 0
+        & .open
+            top: -120%
+            transform: scale(1)
+            left: 1px
+            opacity: 1
+            transition: 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6)
     &__body
         overflow-y: auto
         overflow-x: hidden
         background: #fff
-        border-widgh: 4px
+        border-width: 4px
         border-style: solid
         border-bottom: 0
         box-sizing: border-box

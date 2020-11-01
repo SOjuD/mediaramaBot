@@ -7,7 +7,8 @@ export default function createChat(params){
     const { view: {   
                     name, 
                     photo,
-                    color
+                    color,
+                    welcome
                 } 
             } = params;
 
@@ -16,14 +17,20 @@ export default function createChat(params){
     chat.id = 'ramabot';
     chat.innerHTML = `
         <div class="ramabot__header" style="background: ${color}">
+            <div class="ramabot__header_message">  
+                <p>${welcome}</p>
+            </div>
             <div class="ramabot__header_img"><img id="img1" src="${photo}" alt="img"></div>
             <div class="ramabot__header_title">
                 <h6>${name}</h6>
                 <p> Буду рад помочь!</p>
             </div>
+            <div class="ramabot-unread">
+                <div class="ramabot-unread-counter d-none" id="ramabot-counter">0</div>
+            </div>
         </div>
-        <div class="ramabot__body_box ramabot__body_hidden" style="border-color: ${color}">
-            <div class="ramabot__body">
+        <div class="ramabot__body_box ramabot__body_hidden" >
+            <div class="ramabot__body" style="border-color: ${color}">
                 <div class="write_wrap d-none" id="ramabot_prealoader">
                     <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" width="256px" height="64px" viewBox="0 0 128 32" xml:space="preserve">
                         <rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF" />
