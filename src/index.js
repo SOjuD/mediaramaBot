@@ -1,6 +1,6 @@
 // JS
-import './js/'
+import './components/ramabot/ramabot'
 
 // SASS
-import './sass/main.sass'
+import './components/ramabot/ramabot.sass'
 
