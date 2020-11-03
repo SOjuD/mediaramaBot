@@ -22,11 +22,7 @@ const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
 const optimization = () => {
-  const config = {
-    splitChunks: {
-      chunks: 'all'
-    }
-  }
+  const config = {};
 
   if (isProd) {
     config.minimizer = [
