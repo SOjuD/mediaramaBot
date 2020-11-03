@@ -85,7 +85,7 @@ module.exports = {
     app: PATHS.src,
   },
   output: {
-    filename: filename('js'),
+    filename: 'ramabot.js',
     path: PATHS.dist
   },
   optimization: optimization(),
