@@ -1,34 +1,14 @@
 import { createChat } from './chat-control';
-
-import { getBotCookie } from './functions';
-
-import './functions/tel-mask';
+import { getBotCookie, getParams, addMask } from './functions';
 
 
-const ramaParams = {
-    botMessages: [
-        'Здравствуйте! Вам нужна помощь?',
-        'Напишите, что вас интересует).',
-        'Подскажите как к вам обращаться?',
-        'У меня для вас есть предложение напишите свой номер я вам перезвоню.))',
-        'Спасибо, я скоро перезвоню.'
-    ],
-    log: getBotCookie().log || [],
-    isOpen: false,
-    userTimer: '',
-    messagesQueue: [],
-    unreadMessages: [],
-    botWrite: false,
-    handlerUrl: 'http://pathtofile.by/mail.php',
-    view: {
-        name: 'Александр',
-        photo: '../assets/img/manager.png',
-        color: 'red',
-        welcome: "Если возникнут вопросы, обращайтесь, я вам помогу)"
-    }
-};
+const pathToParams = 'params.json';
 
+getParams(pathToParams).then( ramaParams => {
+    ramaParams.log = getBotCookie().log || [];
+    createChat(ramaParams);
+    addMask();
+});
 
-createChat(ramaParams);
 
 

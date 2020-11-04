@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", function() {
+export default function addMask () {
     function setCursorPosition(pos, elem) {
         elem.focus();
         if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
@@ -28,4 +28,4 @@ window.addEventListener("DOMContentLoaded", function() {
     input.addEventListener("input", mask, false);
     input.addEventListener("focus", mask, false);
     input.addEventListener("blur", mask, false);
-});
+}
