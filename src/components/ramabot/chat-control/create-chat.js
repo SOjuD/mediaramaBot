@@ -5,7 +5,8 @@ import { toggleChat, restoreDiscussion, startDiscussion, toggleInput } from '../
 export default function createChat(params){
 
     const { view: {   
-                    name, 
+                    name,
+                    title, 
                     photo,
                     color,
                     welcome
@@ -23,7 +24,7 @@ export default function createChat(params){
             <div class="ramabot__header_img"><img id="img1" src="${photo}" alt="img"></div>
             <div class="ramabot__header_title">
                 <h6>${name}</h6>
-                <p> Буду рад помочь!</p>
+                <p>${title}</p>
             </div>
             <div class="ramabot-unread">
                 <div class="ramabot-unread-counter d-none" id="ramabot-counter">0</div>

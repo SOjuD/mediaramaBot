@@ -12,9 +12,10 @@
     "messagesQueue": [],
     "unreadMessages": [],
     "botWrite": false,
-    "handlerUrl": "http://pathtofile.by/mail.php",
+    "handlerUrl": "http://ramabot.dix.by/mail.php",
     "view": {
         "name": "Александр",
+        "title": "Буду рад помочь)",
         "photo": "../assets/img/manager.png",
         "color": "red",
         "welcome": "Если возникнут вопросы, обращайтесь, я вам помогу)"
