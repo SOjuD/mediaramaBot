@@ -6,9 +6,15 @@ const basePath = 'http://ramabot.dix.by/getparams.php';
 const pathToParams = basePath + id;
 
 getParams(pathToParams).then( ramaParams => {
-    ramaParams.log = getBotCookie().log || [];
-    createChat(ramaParams);
-    addMask();
+    try{
+        if( !ramaParams ) throw new Error('Данные пользователя не найдены');
+
+        ramaParams.log = getBotCookie().log || [];
+        createChat(ramaParams);
+        addMask();
+    }catch(e){
+        console.log(e);
+    }
 });
 
 
