@@ -1,6 +1,3 @@
-import { sendData } from '../send-form';
-
-
 export default function (params) {
     
     const form = document.querySelector('#ramabot');
@@ -27,7 +24,6 @@ export default function (params) {
             
             textareas.forEach( el => { el.classList.add('d-none') });
             inputs.forEach( el => { el.classList.add('d-none') });
-            sendData(params);
             break;
 
         default :

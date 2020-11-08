@@ -1,6 +1,7 @@
 import addMessage from './add-message';
 import iterationMessage from './iteration-message';
-import { addToQueue, removeFromQueue, showPreloader, hidePreloader, editUnreadQueue, showWelcome } from '../chat-control/';
+import { addToQueue, removeFromQueue, showPreloader, 
+         hidePreloader, editUnreadQueue, showWelcome } from '../chat-control/';
 
 
 
