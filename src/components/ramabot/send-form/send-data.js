@@ -1,16 +1,18 @@
 export default function sendData(params) {
-    let dataStr = '';
+    let conversation = '';
 
     params.log.forEach( ({ msg }) => {
-        dataStr += `${msg}\n`;
+        conversation += `- ${msg}\n`;
     } );
 
     fetch(params.handlerUrl, {
         method: 'POST',
-        header: {
-            // 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-            'Content-Type': 'text/plain;charset=utf-8'
-        },
-        body: dataStr
+        headers: {
+			'Content-Type': 'application/json;charset=utf-8'
+		},
+		body: JSON.stringify({conversation})
+    })
+    .then(async(res) => {
+        console.log(await res.text())
     })
 }

@@ -48,9 +48,9 @@ export default function createChat(params){
                 </div>
             </div>
             <div class="ramabot__body_form" style="border-color: ${color}">   
-                <textarea name="question" placeholder="Введите ваше сообщение"></textarea>
-                <input class="d-none" type="text" name="name" placeholder="Введите ваше имя">
-                <input class="d-none" type="tel" name="phone" placeholder="Введите ваш номер телефона">
+                <textarea class="ramabot-input-field" name="question" placeholder="Введите ваше сообщение"></textarea>
+                <input class="d-none ramabot-input-field" type="text" name="name" placeholder="Введите ваше имя">
+                <input class="d-none ramabot-input-field" type="tel" name="phone" placeholder="Введите ваш номер телефона">
                 <button id="rama_send">
                     <svg id="send" viewBox="0 0 455 455" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: ${color}">
                     <path d="M227.5 0C101.855 0 0 101.855 0 227.5C0 353.145 101.855 455 227.5 455C353.145 455 455 353.145 455 227.5C455 101.855 353.145 0 227.5 0ZM199.476 355.589L178.228 334.411L284.791 227.5L178.228 120.589L199.476 99.411L327.148 227.5L199.476 355.589Z"></path>
