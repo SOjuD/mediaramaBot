@@ -1,6 +1,6 @@
 import showWelcome from './show-welcome';
 import editUnreadQueue from './edit-unread-queue';
-
+import { startDiscussion } from '../chat-control';
 
 export default function toggleChat(params) {
 
@@ -9,6 +9,14 @@ export default function toggleChat(params) {
 
     params.isOpen = !params.isOpen;
 
-    if( params.isOpen ) editUnreadQueue(params);
-    else showWelcome(params.view.welcome);
+    if( params.isOpen ) {
+        editUnreadQueue(params);
+        if(params.botTimer) {
+            clearTimeout(params.botTimer);
+            params.botTimer = '';
+            startDiscussion(params)
+        }
+    }else {
+        showWelcome(params.view.welcome);
+    }
 }

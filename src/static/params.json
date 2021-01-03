@@ -1,4 +1,13 @@
 {
+    "log": [],
+    "isOpen": false,
+    "timeToStart": 30000,
+    "botTimer": "",
+    "userTimer": "",
+    "messagesQueue": [],
+    "unreadMessages": [],
+    "botWrite": false,
+    "handlerUrl": "http://ramabot.dix.by/mail.php",
     "botMessages": [
         "Здравствуйте! Вам нужна помощь?",
         "Напишите, что вас интересует).",
@@ -6,13 +15,6 @@
         "У меня для вас есть предложение напишите свой номер я вам перезвоню.))",
         "Спасибо, я скоро перезвоню."
     ],
-    "log": [],
-    "isOpen": false,
-    "userTimer": "",
-    "messagesQueue": [],
-    "unreadMessages": [],
-    "botWrite": false,
-    "handlerUrl": "http://ramabot.dix.by/mail.php",
     "view": {
         "name": "Александр",
         "title": "Буду рад помочь)",

@@ -4,14 +4,15 @@ import { toggleChat, restoreDiscussion, startDiscussion, toggleInput } from '../
 
 export default function createChat(params){
 
-    const { view: {   
-                    name,
-                    title, 
-                    photo,
-                    color,
-                    welcome
-                } 
-            } = params;
+    const { timeToStart,
+            view:   {   
+                        name,
+                        title, 
+                        photo,
+                        color,
+                        welcome
+                    } 
+                } = params;
 
     const chat = document.createElement('form');
     chat.className = 'ramabot';
@@ -67,8 +68,8 @@ export default function createChat(params){
     chat.addEventListener("submit", (evt) => { sendForm(evt, params) });
     chat.addEventListener("input", (evt) => { setCurrentMessage(params, evt) });
 
-    if (params.log.length) restoreDiscussion(params);
-    else startDiscussion(params);
+    params.log.length ? restoreDiscussion(params) :
+    params.botTimer = setTimeout( () => startDiscussion(params), timeToStart);
 
     toggleInput(params);
 
