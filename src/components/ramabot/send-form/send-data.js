@@ -1,7 +1,9 @@
+import { getBotCookie } from '../functions';
+
+
 export default function sendData(params) {
     let conversation = '';
-
-    params.log.forEach( ({ msg }) => {
+    getBotCookie().log.forEach( ({ msg }) => {
         conversation += `- ${msg}\n`;
     } );
 
