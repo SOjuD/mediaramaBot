@@ -1,13 +1,13 @@
 import { getBotCookie } from '../functions';
 
 
-export default function sendData(params) {
+export default function sendData(handlerUrl) {
     let conversation = '';
     getBotCookie().log.forEach( ({ msg }) => {
         conversation += `- ${msg}\n`;
     } );
 
-    fetch(params.handlerUrl, {
+    fetch(handlerUrl, {
         method: 'POST',
         headers: {
 			'Content-Type': 'application/json;charset=utf-8'

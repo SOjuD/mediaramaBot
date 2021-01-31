@@ -2,7 +2,7 @@ import { getBotCookie, setBotCookie, createLogItem } from '../functions';
 
 function writeLogCookie(message, className){
     const cookie = getBotCookie();
-    const log = cookie.log || [];
+    const {log = []} = cookie;
     let coincidence;
 
     if( className === 'msg_wrap'){

@@ -1,9 +1,10 @@
 import { addMessage } from '../bot-write';
+import { getBotCookie } from '../functions';
 
-export default function restoreDiscussion({ log, botMessages }) {
+export default function restoreDiscussion({ botMessages }) {
 
 
-    log.forEach( ({ msg, from }) => {
+    getBotCookie().log.forEach( ({ msg, from }) => {
         addMessage(msg, from, false);
 
         if( from === 'msg_wrap' ){

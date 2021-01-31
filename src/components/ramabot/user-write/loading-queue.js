@@ -1,4 +1,5 @@
 import { addMessage, botWrite } from '../bot-write';
+import { sendData } from '../send-form';
 
 export default function (params, evt) {
 
@@ -12,6 +13,11 @@ export default function (params, evt) {
         if( messagesQueue.length && botWrite ) return;
             prepareToAddMessage(params, evt, sendButton);
         clearInterval(timer);
+        
+        return Promise.resolve()
+            .then(() => {
+                params.botMessages.length <= 1 && sendData(params.handlerUrl);
+            })
     }, 200);
 }
 

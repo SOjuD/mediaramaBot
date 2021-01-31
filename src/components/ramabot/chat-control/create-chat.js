@@ -1,6 +1,7 @@
 import { sendForm } from '../send-form';
 import { setCurrentMessage } from '../user-write';
 import { toggleChat, restoreDiscussion, startDiscussion, toggleInput } from '../chat-control';
+import { getBotCookie } from '../functions';
 
 export default function createChat(params){
 
@@ -68,7 +69,7 @@ export default function createChat(params){
     chat.addEventListener("submit", (evt) => { sendForm(evt, params) });
     chat.addEventListener("input", (evt) => { setCurrentMessage(params, evt) });
 
-    params.log.length ? restoreDiscussion(params) :
+    getBotCookie().log ? restoreDiscussion(params) :
     params.botTimer = setTimeout( () => startDiscussion(params), timeToStart);
 
     toggleInput(params);
