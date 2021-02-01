@@ -1,6 +1,6 @@
 {
     "isOpen": false,
-    "timeToStart": 30000,
+    "timeToStart": 6000,
     "botTimer": "",
     "userTimer": "",
     "messagesQueue": [],

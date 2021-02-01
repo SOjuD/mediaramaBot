@@ -1,6 +1,7 @@
 import showWelcome from './show-welcome';
 import editUnreadQueue from './edit-unread-queue';
 import { startDiscussion } from '../chat-control';
+import { getBotCookie } from '../functions';
 
 export default function toggleChat(params) {
 
@@ -11,7 +12,7 @@ export default function toggleChat(params) {
 
     if( params.isOpen ) {
         editUnreadQueue(params);
-        if(params.botTimer) {
+        if(params.botTimer && !getBotCookie('log')) {
             clearTimeout(params.botTimer);
             params.botTimer = '';
             startDiscussion(params)
