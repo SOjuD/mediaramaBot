@@ -12,10 +12,10 @@ export default function toggleChat(params) {
 
     if( params.isOpen ) {
         editUnreadQueue(params);
-        if(params.botTimer && !getBotCookie('log')) {
+        if(params.botTimer && !getBotCookie().log) {
             clearTimeout(params.botTimer);
             params.botTimer = '';
-            startDiscussion(params)
+            startDiscussion(params);
         }
     }else {
         showWelcome(params.view.welcome);
